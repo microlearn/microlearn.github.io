@@ -1,0 +1,19 @@
+{
+   "author": "Aimee Sohn",
+   "chrome_url_overrides": {
+      "newtab": "newtab.html"
+   },
+   "description": "Learn Japanese each time you open a new tab.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqmCGlnj+dhKY1QNBrAMgikfXlrjUCUG2giXASMoBqhpdA2FI9eCrIm2SkAvC0+8N4iwnDmXVEpCqau0h/Rn8azZDV1AYcp6wTSVbZMQWKnk1hViMiUpkXwZ5DKSlDFNoX8R1zl1ro8//r3+45wKp84IhVemj5Des2JtpbgWDAOmFuk2e69RS1w6escfHDwXQHVQdCz4k9Fvq89wNNNqB3R4j+2ETzgC41XqrdjOyzyM+OpMke1bzNCyILuTzMCzVKjKfwhSh4P6kSnqyHcB8nWrd1OJE0K0ZdjYWXdF5NAIRWcGnQyADOlgcwGxr0dPrxDnZQLXS8uSygZi41nn/lwIDAQAB",
+   "manifest_version": 2,
+   "name": "Mainichi",
+   "permissions": [ "tabs" ],
+   "short_name": "mainichi",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.17"
+}
