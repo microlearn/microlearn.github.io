@@ -93,13 +93,17 @@ for word,word_info of orig_words
   #console.log wd
   new_wd = wd
   new_py = py
+  new_zi = py
+  new_jp = ''
   info = simplified_to_info[wd]
   if info?
     {traditional, simplified, pinyin, zhuyin, jyutping} = info
     if traditional != simplified
       new_wd = traditional + '【' + wd + '】'
     new_py = zhuyin + '　' + jyutping
-  word_info.cn = {wd: new_wd, py: new_py}
+    new_zi = zhuyin
+    new_jp = jyutping
+  word_info.cn = {wd: new_wd, py: new_py, jp: new_jp, zi: new_zi}
   output[word] = word_info
   #definition = hanzi.definitionLookup(wd)
   #if definition? and definition[0].traditional?
