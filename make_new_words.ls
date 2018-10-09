@@ -85,6 +85,22 @@ do ->
 
 #hanzi.start()
 
+zhuyin_syllable_to_html = (zhuyin_syllable) ->
+  last = zhuyin_syllable[zhuyin_syllable.length - 1]
+  color = 'red'
+  if last == 'ˊ'
+    color = 'orange'
+  if last == 'ˇ'
+    color = 'green'
+  if last == 'ˋ'
+    color = 'blue'
+  if last == '˙ '
+    color = 'black'
+  return '<span style="color: ' + color + '">' + zhuyin_syllable + '</span>'
+
+zhuyin_to_html = (zhuyin) ->
+  return [zhuyin_syllable_to_html(x) for x in zhuyin.split(' ')].join(' ')
+
 orig_words = JSON.parse fs.readFileSync('orig_words.json', 'utf-8')
 output = {}
 for word,word_info of orig_words
@@ -94,6 +110,7 @@ for word,word_info of orig_words
   new_wd = wd
   new_py = py
   new_zi = py
+  new_zih = py
   new_jp = ''
   info = simplified_to_info[wd]
   if info?
@@ -102,8 +119,9 @@ for word,word_info of orig_words
       new_wd = traditional + '【' + wd + '】'
     new_py = zhuyin + '　' + jyutping
     new_zi = zhuyin
+    new_zih = zhuyin_to_html zhuyin
     new_jp = jyutping
-  word_info.cn = {wd: new_wd, py: new_py, jp: new_jp, zi: new_zi}
+  word_info.cn = {wd: new_wd, py: new_py, jp: new_jp, zi: new_zi, zih: new_zih}
   output[word] = word_info
   #definition = hanzi.definitionLookup(wd)
   #if definition? and definition[0].traditional?
