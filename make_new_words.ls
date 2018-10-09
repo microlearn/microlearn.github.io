@@ -94,7 +94,7 @@ zhuyin_syllable_to_html = (zhuyin_syllable) ->
     color = 'green'
   if last == 'ˋ'
     color = 'blue'
-  if last == '˙ '
+  if last == '・'
     color = 'black'
   return '<span style="color: ' + color + '">' + zhuyin_syllable + '</span>'
 
